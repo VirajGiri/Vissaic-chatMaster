@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'vissaic_devchat';
+  sidebarOpen = true;
+  isLoggedIn = false;
+  sidebarToggeler(){
+    this.sidebarOpen = !this.sidebarOpen;
+  }
 }
