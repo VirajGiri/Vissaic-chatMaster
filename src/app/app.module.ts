@@ -15,15 +15,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { ChatWindowComponent } from './chat-window/chat-window.component';
 import { HomeModule } from './home/home.module';
+import { PageNotFoundComponent } from './Error/page-not-found/page-not-found.component';
+import { SidebarModule } from './sidebar/sidebar.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-    SidebarComponent,
-    NavbarComponent,
     LoginComponent,
-    ChatWindowComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +37,10 @@ import { HomeModule } from './home/home.module';
     MatListModule,
     MatCardModule,
     MatButtonModule,
-    HomeModule
+    SidebarModule,
+    HomeModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

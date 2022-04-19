@@ -8,12 +8,17 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
+import { ChatWindowComponent } from '../chat-window/chat-window.component';
+import { AuthGuardService } from '../Services/auth-guard.service';
 
 
 const routes: Routes = [
-  {path:'',component:HomeComponent},
-  {path:'home',component:HomeComponent},
-  {path:'to-do', component:ToDoComponent}
+  {path:'',component:HomeComponent,
+  children:[
+    {path:'home',component:HomeComponent,canActivate:[AuthGuardService]},
+    {path:'to-do', component:ToDoComponent,canActivate:[AuthGuardService]}
+  ],
+  canActivate:[AuthGuardService]},
 ];
 
 @NgModule({
@@ -31,6 +36,7 @@ const routes: Routes = [
     RouterModule.forChild(routes)
    
   ],
-  exports: [],
+  exports: [RouterModule],
+  providers:[AuthGuardService]
 })
 export class HomeModule { }
