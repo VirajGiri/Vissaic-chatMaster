@@ -18,7 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { HomeModule } from './home/home.module';
 import { PageNotFoundComponent } from './Error/page-not-found/page-not-found.component';
 import { SidebarModule } from './sidebar/sidebar.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
@@ -41,6 +41,7 @@ import { HttpClientModule } from '@angular/common/http';
     HomeModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

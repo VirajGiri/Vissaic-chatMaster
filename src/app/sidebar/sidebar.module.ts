@@ -14,6 +14,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from '../home/home.component';
 import { HomeModule } from '../home/home.module';
 import { AuthGuardService } from '../Services/auth-guard.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {path:'',
@@ -44,7 +45,9 @@ const routes: Routes = [
     MatListModule,
     MatCardModule,
     MatButtonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports:[RouterModule],
   providers:[AuthGuardService]
